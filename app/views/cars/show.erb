@@ -1,0 +1,13 @@
+<h1><%= @car.make %></h1>
+
+<h2><%= @car.year.to_s + " " + @car.model %></h2>
+
+<p>Color: <%= @car.color %></p><br>
+<p>Price: <%= @car.price %></p><br>
+<p>Available: <%= @car.available %></p><br>
+<%= @car.image %>
+<p><% car.rentals.each do |rent| %>
+  <%= rent.review %>
+<% end %></p>
+<%= link_to "Edit", edit_car_path(@car) %>
+<%= link_to "Delete", @car, method: :delete, data: {confirm: "Are you sure?"} %>

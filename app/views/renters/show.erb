@@ -1,0 +1,13 @@
+<h1>Welcome Back</h1>
+
+<h2><%= @renter.name %></h2>
+
+<h3>Cars you have rented:</h3>
+
+<ul>
+  <% @renter.rentals.each do |rent| %>
+    <li><%= link_to rent.car.make + " " + rent.car.model, car_path(rent.car) %><br>
+      Review: <%= rent.review %>
+    </li>
+  <% end %>
+</ul>

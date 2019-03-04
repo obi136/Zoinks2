@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  review: MyString
+  car_id: 1
+  renter_id: 1
+
+two:
+  review: MyString
+  car_id: 1
+  renter_id: 1

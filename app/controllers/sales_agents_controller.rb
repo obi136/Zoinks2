@@ -1,0 +1,2 @@
+class SalesAgentsController < ApplicationController
+end
