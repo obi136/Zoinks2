@@ -1,0 +1,25 @@
+<%= form_for @renter do |f| %>
+  <h3>Info:</h3><br>
+  <%= f.label :name %>
+  <%= f.text_field :name %><br>
+  <%= f.label :age %>
+  <%= f.number_field :age %><br><br>
+  <h3>Address:</h3><br>
+  <%= f.label :street %>
+  <%= f.text_field :street %><br>
+  <%= f.label :city %>
+  <%= f.text_field :city %><br>
+  <%= f.label :state %>
+  <%= f.text_field :state %><br>
+  <%= f.label :zip %>
+  <%= f.number_field :zip %><br><br>
+  <h3>Phone Number:</h3><br>
+  <%= f.label :phone %>
+  <%= f.number_field :phone %><br><br>
+  <h3>Account Setup:</h3><br>
+  <%= f.label :username %>
+  <%= f.text_field :username %><br>
+  <%= f.label :password_digest %>
+  <%= f.text_field :password_digest %><br>
+  <%= f.submit %>
+<% end %>

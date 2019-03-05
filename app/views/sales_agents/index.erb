@@ -1,0 +1,7 @@
+<h1>Our Sales Agents</h1>
+
+<ol>
+  <% @sales_agents.each do |sa| %>
+    <li><%= link_to sa.name, sales_agent_path(sa) %></li>
+  <% end %>
+</ol>

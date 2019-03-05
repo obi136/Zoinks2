@@ -11,3 +11,5 @@
     </li>
   <% end %>
 </ul>
+<%= link_to "Edit", edit_renter_path(@renter) %>
+<%= link_to "Delete", @renter, method: :delete, data: {confirm: "Are you sure?"} %>
