@@ -1,0 +1,7 @@
+<h1>Leave a review</h1>
+
+<%= form_for @rental do |f| %>
+  <%= f.label :review %>
+  <%= f.text_area :review %>
+  <%= f.submit %>
+<% end %>

@@ -1,4 +1,7 @@
 <h1>Rent This Car</h1>
+<% if flash[:unavailable] %>
+  <li><%= flash[:unavailable] %></li>
+<% end %><br><br>
 
 <%= form_for @rental do |f| %>
   <%= f.label :pick_up %>

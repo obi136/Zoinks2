@@ -1,8 +1,3 @@
-<% if flash[:unavailable] %>
-  <%= flash[:unavailable] %>
-<% end %>
-
-
 <h1><%= @car.make %></h1>
 
 <h2><%= @car.year.to_s + " " + @car.model %></h2>
@@ -11,7 +6,7 @@
 <p>Price: <%= @car.price %></p><br>
 <p>Available: <%= @car.available %></p><br>
 <img src=<%= @car.image %> >
-<p><% @car.rentals.each do |rent| %>
+<p>Review:<br><% @car.rentals.each do |rent| %>
   <%= rent.review %>
 <% end %></p>
 <%= link_to "Rent", new_rental_path(@car) %>
