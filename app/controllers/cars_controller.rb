@@ -6,6 +6,9 @@ class CarsController < ApplicationController
 
   def show
     @car = Car.find(params[:id])
+    if @car.available == false
+      flash[:unavailable] = "Sorry this car is currently unavailable"
+    end
   end
 
   def new
@@ -38,5 +41,5 @@ class CarsController < ApplicationController
   def car_params
     params.require(:car).permit(:make, :model, :year, :color, :price, :available)
   end
-  
+
 end

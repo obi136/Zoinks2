@@ -1,6 +1,10 @@
 <h1>Welcome Back</h1>
 
-<h2><%= @renter.name %></h2>
+<h2>Name: <%= @renter.name %></h2>
+<h2>Address:</h2>
+<h2><%= @renter.street %></h2>
+<h2><%= @renter.city %>, <%= @renter.state %> <%= @renter.zip %></h2>
+<h2>Phone: <%= @renter.phone %></h2>
 
 <h3>Cars you have rented:</h3>
 

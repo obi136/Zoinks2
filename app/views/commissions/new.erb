@@ -1,0 +1,9 @@
+<h1>Commissions Page</h1>
+
+<%= form_for @commission do |f| %>
+  <%= f.label :sales_agent_id %>
+  <%= f.collection_select :sales_agent_id, @sales_agents, :id, :name %><br>
+  <%= f.label :car_id %>
+  <%= f.collection_select :car_id, @cars, :id, :model %><br>
+  <%= f.submit %>
+<% end %>

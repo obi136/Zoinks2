@@ -36,6 +36,6 @@ class SalesAgentsController < ApplicationController
   private
 
   def sales_agent_params
-    params.require(:sales_agent).permit(:name)
+    params.require(:sales_agent).permit(:name, :username, :password)
   end
 end

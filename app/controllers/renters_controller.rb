@@ -24,7 +24,7 @@ class RentersController < ApplicationController
   def update
     @renter = Renter.find(params[:id])
     @renter.update(renter_params)
-    redirect_to renter_path(@params)
+    redirect_to renter_path(@renter)
   end
 
   def destroy
@@ -38,5 +38,5 @@ class RentersController < ApplicationController
   def renter_params
     params.require(:renter).permit(:name, :age, :street, :city, :state, :zip, :phone, :username, :password)
   end
-  
+
 end

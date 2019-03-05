@@ -5,5 +5,6 @@
     <li><%= link_to car.make + " " + car.model, car_path(car) %></li>
   <% end %>
 </ol>
-<%= link_to "Edit", edit_sales_agent_path(@sales_agent) %>
-<%= link_to "Delete", @sales_agent, method: :delete, data: {confirm: "Are you sure?"} %>
+<%= link_to "Edit", edit_sales_agent_path(@sales_agent) %><br>
+<%= link_to "Delete", @sales_agent, method: :delete, data: {confirm: "Are you sure?"} %><br>
+<%= link_to "New Car", new_car_path %>

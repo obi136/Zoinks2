@@ -1,0 +1,13 @@
+<h1>Rent This Car</h1>
+
+<%= form_for @rental do |f| %>
+  <%= f.label :pick_up %>
+  <%= f.date_select :pick_up %><br>
+  <%= f.label :drop_off %>
+  <%= f.date_select :drop_off %><br>
+  <%= f.label :car_id %>
+  <%= f.collection_select :car_id, @cars, :id, :model %><br>
+  <%= f.label :renter_id %>
+  <%= f.collection_select :renter_id, @renters, :id, :name %><br>
+  <%= f.submit %>
+<% end %>

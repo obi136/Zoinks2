@@ -1,0 +1,9 @@
+<h1>Your Rental Car</h1>
+
+<h3>Your car: <%= @rental.car.make + " " + @rental.car.model %></h3>
+
+<h3>Will be ready for pick-up at: <%= @rental.pick_up.strftime("%B %d, %Y") %></h3>
+
+<h3>Expected drop-off at: <%= @rental.drop_off.strftime("%B %d, %Y") %></h3>
+
+<h3>Your total cost for this rental is: $<%= @rental.total_price %></h3>

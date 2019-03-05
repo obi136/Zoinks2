@@ -1,7 +1,0 @@
-<h1>Commissions Page</h1>
-
-<ol>
-  <% @commissions.each do |comm| %>
-    <li><%= link_to comm.sales_agent.name + " - " + comm.car.make + " " + comm.car.model, sales_agent_path %></li>
-  <% end %>
-</ol>
