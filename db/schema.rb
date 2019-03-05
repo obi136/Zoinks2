@@ -42,7 +42,15 @@ ActiveRecord::Schema.define(version: 2019_03_05_151039) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "renters", force: :cascade do |t|
+  create_table "sales_agents", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "username"
+    t.string "password_digest"
+  end
+
+  create_table "users", force: :cascade do |t|
     t.string "name"
     t.integer "age"
     t.string "street"
@@ -54,14 +62,6 @@ ActiveRecord::Schema.define(version: 2019_03_05_151039) do
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "sales_agents", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "username"
-    t.string "password_digest"
   end
 
 end

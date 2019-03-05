@@ -1,4 +1,4 @@
-class Renter < ApplicationRecord
+class User < ApplicationRecord
   has_many :rentals
   has_many :cars, through: :rentals
 

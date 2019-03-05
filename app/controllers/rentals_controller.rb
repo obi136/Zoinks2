@@ -17,7 +17,7 @@ class RentalsController < ApplicationController
       redirect_to new_rental_path
     else
       @rental = Rental.create(rental_params)
-      @car.available = false
+      @car.update(available: false)
       redirect_to rental_path(@rental)
     end
   end
