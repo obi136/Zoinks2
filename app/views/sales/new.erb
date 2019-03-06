@@ -1,4 +1,6 @@
-<%= form_for @car do |f| %>
+<h1>Sell Your Car</h1>
+
+<%= form_for @sale do |f| %>
   <%= f.label :make %>
   <%= f.text_field :make %><br><br>
   <%= f.label :model %>
@@ -7,11 +9,13 @@
   <%= f.number_field :year %><br><br>
   <%= f.label :color %>
   <%= f.text_field :color %><br><br>
+  <%= f.label :sale_price %>
+  <%= f.number_field :sale_price %><br><br>
   <%= f.label :rent_price %>
   <%= f.number_field :rent_price %><br><br>
   <%= f.label :available %>
   <%= f.check_box :available %><br><br>
   <%= f.label :image %>
   <%= f.text_field :image %><br><br>
-  <%= f.submit %>
+  <%= f.submit "Sell" %>
 <% end %>

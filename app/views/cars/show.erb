@@ -2,13 +2,15 @@
 
 <h2><%= @car.year.to_s + " " + @car.model %></h2>
 
-<p>Color: <%= @car.color %></p><br>
-<p>Price: <%= @car.price %></p><br>
-<p>Available: <%= @car.available %></p><br>
-<img src=<%= @car.image %> >
+<p>Color: <%= @car.color %></p>
+<p>Price: <%= @car.rent_price %></p>
+<p>Available: <%= @car.available %></p>
+<% if @car.available == true %>
+  <%= link_to "Rent Me", new_rental_path(@car) %><br>
+<% end %>
+<img src=<%= @car.image %> <br>
 <p>Review:<br><% @car.rentals.each do |rent| %>
   <%= rent.review %>
 <% end %></p>
-<%= link_to "Rent", new_rental_path(@car) %>
 <%= link_to "Edit", edit_car_path(@car) %>
 <%= link_to "Delete", @car, method: :delete, data: {confirm: "Are you sure?"} %>

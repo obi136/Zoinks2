@@ -17,18 +17,12 @@ ActiveRecord::Schema.define(version: 2019_03_05_151039) do
     t.string "model"
     t.integer "year"
     t.string "color"
-    t.integer "price"
+    t.integer "sale_price"
+    t.integer "rent_price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "available"
     t.string "image"
-  end
-
-  create_table "commissions", force: :cascade do |t|
-    t.integer "sales_agent_id"
-    t.integer "car_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "rentals", force: :cascade do |t|
@@ -37,7 +31,22 @@ ActiveRecord::Schema.define(version: 2019_03_05_151039) do
     t.datetime "drop_off"
     t.integer "total_price"
     t.integer "car_id"
-    t.integer "renter_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sales", force: :cascade do |t|
+    t.string "make"
+    t.string "model"
+    t.integer "year"
+    t.string "color"
+    t.integer "sale_price"
+    t.integer "rent_price"
+    t.boolean "available"
+    t.string "image"
+    t.integer "user_id"
+    t.integer "car_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

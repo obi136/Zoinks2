@@ -6,20 +6,16 @@ class RentalsController < ApplicationController
 
   def new
     @rental = Rental.new
-    @renters = Renter.all
-    @cars = Car.all
+    @users = User.all
+    @cars = Car.where(available: true)
   end
 
   def create
-     @car = Car.find(params[:rental][:car_id])
-    if @car.available == false
-      flash[:unavailable] = "Sorry this car is unavailable"
-      redirect_to new_rental_path
-    else
-      @rental = Rental.create(rental_params)
-      @car.update(available: false)
-      redirect_to rental_path(@rental)
-    end
+    @rental = Rental.create(rental_params)
+    @car = @rental.car
+    @car.update(available: false)
+    redirect_to rental_path(@rental)
+
   end
 
   def edit
@@ -29,12 +25,12 @@ class RentalsController < ApplicationController
   def update
     @rental = Rental.find(params[:id])
     @rental.update(rental_params)
-    redirect_to renter_path(@rental.renter)
+    redirect_to rental_path(@rental.user)
   end
 
   private
 
   def rental_params
-    params.require(:rental).permit(:review, :pick_up, :drop_off, :total_price, :car_id, :renter_id)
+    params.require(:rental).permit(:review, :pick_up, :drop_off, :total_price, :car_id, :user_id)
   end
 end

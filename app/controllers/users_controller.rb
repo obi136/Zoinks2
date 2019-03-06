@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
 
+  def sale
+    @sale = Sale.new
+  end
+
   def index
     @users = User.all
   end
@@ -13,8 +17,8 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.create(renter_params)
-    redirect_to renter_path(@user)
+    @user = User.create(user_params)
+    redirect_to user_path(@user)
   end
 
   def edit
@@ -23,19 +27,19 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    @user.update(renter_params)
-    redirect_to renter_path(@user)
+    @user.update(user_params)
+    redirect_to user_path(@user)
   end
 
   def destroy
     @user = User.find(params[:id])
     @user.destroy
-    redirect_to renters_path
+    redirect_to users_path
   end
 
   private
 
-  def renter_params
+  def user_params
     params.require(:user).permit(:name, :age, :street, :city, :state, :zip, :phone, :username, :password)
   end
 

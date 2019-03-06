@@ -6,7 +6,7 @@ class CreateRentals < ActiveRecord::Migration[5.2]
       t.datetime :drop_off
       t.integer :total_price
       t.integer :car_id
-      t.integer :renter_id
+      t.integer :user_id
 
       t.timestamps
     end

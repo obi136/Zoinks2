@@ -10,7 +10,7 @@
   <%= f.date_select :drop_off %><br>
   <%= f.label :car_id %>
   <%= f.collection_select :car_id, @cars, :id, :model %><br>
-  <%= f.label :renter_id %>
-  <%= f.collection_select :renter_id, @renters, :id, :name %><br>
+  <%= f.label :user_id %>
+  <%= f.collection_select :user_id, @users, :id, :name %><br>
   <%= f.submit %>
 <% end %>
