@@ -10,7 +10,7 @@
 <ul>
   <% @user.rentals.each do |rent| %>
     <li><%= link_to rent.car.make + " " + rent.car.model, car_path(rent.car) %><br>
-      Review: <%= rent.review %>
+      <%= link_to "Review: ", edit_rental_path %> <%= rent.review %>
     </li>
   <% end %>
 </ul>
