@@ -12,5 +12,7 @@
 <p>Review:<br><% @car.rentals.each do |rent| %>
   <%= rent.review %>
 <% end %></p>
+<% if current_user.username == "admin" %>
 <%= link_to "Edit", edit_car_path(@car) %>
 <%= link_to "Delete", @car, method: :delete, data: {confirm: "Are you sure?"} %>
+<% end %>
