@@ -1,7 +1,7 @@
-<h1>Our Customers</h1>
+<h1>Welcome to Zoinks</h1>
 
-<ol>
-  <% @users.each do |user| %>
-    <%= link_to user.name, user_path(user) %>
-  <% end %>
-</ol>
+<h3>Are you a recurring member?</h3>
+<%= link_to "Login", login_path %><br><br>
+
+<h3>Would you like to create an account?</h3>
+<%= link_to "Create Account", new_user_path %>

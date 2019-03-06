@@ -1,6 +1,5 @@
-<h1>Welcome Back</h1>
+<h1>Welcome <%= @user.name %>!</h1>
 
-<h2>Name: <%= @user.name %></h2>
 <h2>Address:</h2>
 <h2><%= @user.street %></h2>
 <h2><%= @user.city %>, <%= @user.state %> <%= @user.zip %></h2>
@@ -15,7 +14,10 @@
     </li>
   <% end %>
 </ul>
+<%= link_to "Logout", logout_path, method: :delete %>
+<% if current_user.id == @user.id %>
 <%= link_to "Edit", edit_user_path(@user) %>
-<%= link_to "Delete", @user, method: :delete, data: {confirm: "Are you sure?"} %>
+<%= link_to "Delete Account", @user, method: :delete, data: {confirm: "Delete your account?"} %>
 <%= link_to "Rent A Car", cars_path%>
 <%= link_to "Sell Your Car", new_sale_path %>
+<% end %>
