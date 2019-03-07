@@ -1,5 +1,9 @@
 class RentalsController < ApplicationController
 
+  def index
+    @rentals = Rental.all.where(user_id: current_user.id)
+  end
+
   def show
     @rental = Rental.find(params[:id])
   end
@@ -24,8 +28,10 @@ class RentalsController < ApplicationController
 
   def update
     @rental = Rental.find(params[:id])
-    @rental.update(rental_params)
-    redirect_to user_path
+    @rental.review = params[:rental][:review]
+    @rental.save
+    # byebug
+    redirect_to cars_path
   end
 
   private

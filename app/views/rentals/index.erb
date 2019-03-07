@@ -1,0 +1,8 @@
+<h1>Your previous rentals</h1>
+
+<% @rentals.each do |rent| %>
+  <%= rent.car.make + " " + rent.car.model %><br>
+  From: <%= rent.pick_up.strftime("%B %d, %Y") %><br>
+  Until: <%= rent.drop_off.strftime("%B %d, %Y") %><br>
+  <%= link_to "Review", edit_rental_path(rent) %><br><br>
+<% end %>
