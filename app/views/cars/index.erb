@@ -7,3 +7,5 @@
     <li><%= link_to car.make + " " + car.model, car_path(car) %></li>
   <% end %>
 </ul>
+
+<%= link_to "Logout", logout_path, method: :delete %>

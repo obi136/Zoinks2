@@ -9,3 +9,5 @@
 <h3>Your total cost for this rental is: $<%= @rental.total_price %></h3>
 
 <h3>Would you like to leave a review?</h3><%= link_to "Review", edit_rental_path %>
+
+<%= link_to "Logout", logout_path, method: :delete %>

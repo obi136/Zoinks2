@@ -1,24 +1,13 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+WELCOME TO ZOINKS, a car rental service in which the user can rent any car for the right price.
 
-Things you may want to cover:
+- Create an account
 
-* Ruby version
+- Head to the Rental Lot
 
-* System dependencies
+- Pick the car you wish to rent
 
-* Configuration
+- Choose how long you'd like to rent the car
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- When finished, leave a review for others!

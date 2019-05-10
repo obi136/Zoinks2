@@ -3,14 +3,22 @@
   <li><%= flash[:unavailable] %></li>
 <% end %><br><br>
 
-<%= form_for @rental do |f| %>
-  <%= f.label :pick_up %>
-  <%= f.date_select :pick_up %><br>
-  <%= f.label :drop_off %>
-  <%= f.date_select :drop_off %><br>
-  <%= f.label :car_id %>
-  <%= f.collection_select :car_id, @cars, :id, :model %><br>
-  <%= f.label :user_id %>
-  <%= f.collection_select :user_id, @users, :id, :name %><br>
-  <%= f.submit %>
-<% end %>
+
+  <%= form_for @rental do |f| %>
+      <%= f.label :pick_up %>
+      <%= f.date_select :pick_up %><br>
+      <%= f.label :drop_off %>
+      <%= f.date_select :drop_off %><br>
+      <%= f.label :car_id %>
+      <%= f.collection_select :car_id, @cars, :id, :model %><br>
+      <%= f.label :user_id %>
+      <%= f.collection_select :user_id, @users, :id, :name %><br>
+      <%= f.submit %>
+    <% end %>
+
+
+<!-- <script type="text/javascript">
+  $(document).ready(function(){
+    $('').formSelect();
+  });
+</script> -->

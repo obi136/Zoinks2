@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authorized, only: [:index]
+  before_action :authorized, except: [:new]
 
   def sale
     @sale = Sale.new
@@ -18,6 +18,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(user_params)
+    session[:user_id] = @user.id
     redirect_to user_path(@user)
   end
 
